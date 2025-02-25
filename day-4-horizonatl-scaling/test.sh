@@ -1,6 +1,5 @@
-for j in {1..10}; do  
-  for i in {1..1000}; do
-    curl -s -o /dev/null -w "%{http_code}\n" http://a52d688738c8f4adeb16bc92b8ee05eb-739072275.ap-south-1.elb.amazonaws.com/ &  # change this http address with pod loadbalancer
-  done
-  wait  # Correct command to wait for all background jobs
+    for i in {1..1000}; do  
+        curl -s -o /dev/null -w "%{http_code}\n" http://a48d1d51f2945469da6ffc19238aa8ad-1307616002.ap-south-1.elb.amazonaws.com/ &  
+    done  
+    wait  # Wait for all background curl processes to finish before next iteration
 done
